@@ -1,0 +1,109 @@
+.checkoutSuccession {
+    height: calc(100vh - 5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .checkoutSuccessionContainer {
+        width: 100%;
+        max-width: 1120px;
+        padding: 0 2rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .confirmationText {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            
+            header {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                
+                h1 {
+                    font-family: 'Baloo 2', cursive;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: var(--yellow-800);
+                }
+                
+                p {
+                    font-size: 1.25rem;
+                    color: var(--base-700);
+                }
+            }
+            
+            .bgGradient {
+                background: linear-gradient(
+                    to right,
+                    var(--yellow-500),
+                    var(--purple-500));
+                padding: 1px;
+                    
+                border-radius: 8px 38px 8px 38px;
+                
+                .bgWhite {
+                    background-color: var(--base-100);
+                    padding: 2rem;
+                    
+                    border-radius: 6px 36px 6px 36px;
+                    
+                    .deliveryInfo {
+                        list-style: none;
+                        
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        
+                        .item {
+                            display: flex;
+                            gap: 0.75rem;
+                            
+                            div {
+                                padding: 0.5rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                
+                                color: var(--base-100);
+                                
+                                border-radius: 50%;
+                            }
+                            
+                            span {
+                                font-size: 1rem;
+                                color: var(--base-600);
+                                
+                                span {
+                                    font-weight: 700;
+                                    color: var(--base-700);
+                                }
+                            }
+                            
+                            &:nth-of-type(1) {
+                                div {
+                                    background-color: var(--purple-500);
+                                }
+                            }
+                            
+                            &:nth-of-type(2) {
+                                div {
+                                    background-color: var(--yellow-500);
+                                }
+                            }
+                            
+                            &:nth-of-type(3) {
+                                div {
+                                    background-color: var(--yellow-800);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

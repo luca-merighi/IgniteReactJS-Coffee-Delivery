@@ -1,0 +1,157 @@
+.coffeeCard {
+    background-color: var(--base-300);
+    width: 100%;
+    max-width: 256px;
+    height: 330px;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    border-radius: 6px 36px 6px 36px;
+    
+    figure {
+        margin-top: -1.5rem;
+        margin-bottom: 0.875rem;
+    }
+    
+    .tags {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        
+        span {
+            height: 1.75rem;
+            padding: 0.5rem;
+            background-color: var(--yellow-100);
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--yellow-800);
+            
+            border-radius: 1.75rem;
+        }
+    }
+    
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        
+        h3 {
+            font-family: 'Baloo 2', cursive;
+            
+            font-size: 1.25rem;
+            color: var(--base-700);
+        }
+        
+        p {
+            font-size: 1.05rem;
+            line-height: 130%;
+            color: var(--base-500);
+            text-align: center;
+        }
+    }
+    
+    footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .price {
+            color: var(--base-700);
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            
+            .addOrRemoveFromCart {
+                background-color: var(--base-400);
+                padding: 0.5rem;
+                height: 2.25rem;
+                
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                justify-content: center;
+                
+                border-radius: 6px;
+                
+                button[type="button"] {
+                    background-color: transparent;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    color: var(--purple-500);
+                    
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    transition: color 0.3s, border-color 0.3s;
+                    
+                    &:hover {
+                        color: var(--purple-800);
+                    }
+                    
+                    &:focus {
+                        outline: none;
+                        color: var(--purple-800);
+                        border-color: var(--purple-500);
+                        border-radius: 3px;
+                    }
+                }
+                
+                span {
+                    color: var(--base-800);
+                }
+            }
+            
+            .addProductToShoppingCart {
+                background-color: var(--purple-800);
+                height: 2.25rem;
+                padding: 0.5rem;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                color: var(--base-100);
+                
+                border: 2px solid transparent;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.3s, border-color 0.3s;
+                
+                &:hover {
+                    background-color: var(--purple-500);
+                }
+                
+                &:focus {
+                    outline: none;
+                    background-color: var(--purple-500);
+                    border-color: var(--base-700);
+                }
+            }
+        }
+    }
+}

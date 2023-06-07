@@ -1,0 +1,54 @@
+.coffeeMenuList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    
+    .coffeeMenuListContainer {
+        width: 100%;
+        max-width: 1120px;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+        
+        header h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2rem;
+            color: var(--base-700);
+            text-align: center;
+            
+            @media(min-width: 1240px) {
+                text-align: left;
+            }
+        }
+        
+        .coffeeMenu {
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+            justify-content: center;
+            
+            @media(min-width: 768px) {
+                display: grid;
+                gap: 0rem;
+                grid-template-columns: auto auto;
+                grid-column-gap: 2rem;
+                grid-row-gap: 2.5rem;
+                
+            }
+            
+            @media(min-width: 1024px) {
+                grid-template-columns: repeat(3, auto);
+            }
+            
+            @media(min-width: 1240px) {
+                grid-template-columns: repeat(4, auto);
+            }
+        }
+    }
+}
