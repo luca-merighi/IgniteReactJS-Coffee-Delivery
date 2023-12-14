@@ -1,0 +1,156 @@
+import { createContext, ReactNode, useEffect, useState } from 'react'
+import api from '@/lib/axios'
+
+interface CoffeesProviderProps {
+    children: ReactNode
+}
+
+export interface Coffee {
+    id: number,
+    name: string,
+    description: string,
+    price: number,
+    imageUrl: string,
+    tags: Array<string>
+}
+
+interface CoffeesData {
+    coffees: Coffee[]
+}
+
+export const CoffeesContext = createContext<CoffeesData>({} as CoffeesData)
+
+export default function CoffeesProvider(props: CoffeesProviderProps) {
+    const [coffees, setCoffees] = useState<Coffee[]>([])
+
+    useEffect(() => {
+        async function loadCoffeesList() {
+            // const getCoffeesList = await api.get('/coffees')
+            // setCoffees(getCoffeesList.data)
+
+            setCoffees([
+                {
+                    id: 1,
+                    name: "Expresso Tradicional",
+                    description: "O tradicional café feito com água quente e grãos moídos",
+                    price: 9.90,
+                    imageUrl: "/coffees-img/expresso.png",
+                    tags: ["tradicional"]
+                },
+                {
+                    id: 2,
+                    name: "Expresso Americano",
+                    description: "Expresso diluído, menos intenso que o tradicional",
+                    price: 8.50,
+                    imageUrl: "/coffees-img/americano.png",
+                    tags: ["tradicional"]
+                },
+                {
+                    id: 3,
+                    name: "Expresso Cremoso",
+                    description: "Café expresso tradicional com espuma cremosa",
+                    price: 8.30,
+                    imageUrl: "/coffees-img/expresso-cremoso.png",
+                    tags: ["tradicional"]
+                },
+                {
+                    id: 4,
+                    name: "Expresso Gelado",
+                    description: "Bebida preparada com café expresso e cubos de gelo",
+                    price: 7.90,
+                    imageUrl: "/coffees-img/cafe-gelado.png",
+                    tags: ["tradicional", "gelado"]
+                },
+                {
+                    id: 5,
+                    name: "Café com Leite",
+                    description: "Meio a meio de expresso tradicional com leite vaporizado",
+                    price: 5.15,
+                    imageUrl: "/coffees-img/cafe-com-leite.png",
+                    tags: ["tradicional", "com leite"]
+                },
+                {
+                    id: 6,
+                    name: "Latte",
+                    description: "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+                    price: 7.35,
+                    imageUrl: "/coffees-img/latte.png",
+                    tags: ["tradicional", "com leite"]
+                },
+                {
+                    id: 7,
+                    name: "Capuccino",
+                    description: "Bebida com canela feita de doses iguais de café, leite e espuma",
+                    price: 7.50,
+                    imageUrl: "/coffees-img/capuccino.png",
+                    tags: ["tradicional", "com leite"]
+                },
+                {
+                    id: 8,
+                    name: "Macchiato",
+                    description: "Café expresso misturado com um pouco de leite quente e espuma",
+                    price: 8.50,
+                    imageUrl: "/coffees-img/macchiato.png",
+                    tags: ["tradicional", "com leite"]
+                },
+                {
+                    id: 9,
+                    name: "Mochaccino",
+                    description: "Café expresso com calda de chocolate, pouco leite e espuma",
+                    price: 8.90,
+                    imageUrl: "/coffees-img/mochaccino.png",
+                    tags: ["tradicional", "com leite"]
+                },
+                {
+                    id: 10,
+                    name: "Chocolate Quente",
+                    description: "Bebida feita com chocolate dissolvido no leite quente e café",
+                    price: 8.75,
+                    imageUrl: "/coffees-img/chocolate-quente.png",
+                    tags: ["especial", "com leite"]
+                },
+                {
+                    id: 11,
+                    name: "Cubano",
+                    description: "Drink gelado de café expresso com rum, creme de leite e hortelã",
+                    price: 9.15,
+                    imageUrl: "/coffees-img/cubano.png",
+                    tags: ["especial", "gelado", "alcoólico"]
+                },
+                {
+                    id: 12,
+                    name: "Havaiano",
+                    description: "Bebida adocicada preparada com café e leite de coco",
+                    price: 9.35,
+                    imageUrl: "/coffees-img/havaiano.png",
+                    tags: ["especial"]
+                },
+                {
+                    id: 13,
+                    name: "Árabe",
+                    description: "Bebida preparada com grãos de café árabe e especiarias",
+                    price: 7.45,
+                    imageUrl: "/coffees-img/arabe.png",
+                    tags: ["especial"]
+                },
+                {
+                    id: 14,
+                    name: "Irlandês",
+                    description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+                    price: 7.90,
+                    imageUrl: "/coffees-img/irlandes.png",
+                    tags: ["especial", "alcoólico"]
+                }
+            ])
+        }
+        loadCoffeesList()
+    }, [])
+
+    return (
+        <CoffeesContext.Provider value={{
+            coffees
+        }}>
+            {props.children}
+        </CoffeesContext.Provider>
+    )
+}
